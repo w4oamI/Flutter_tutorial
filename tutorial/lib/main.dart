@@ -13,7 +13,7 @@ swatch불러와서 블루 음영으로 지정하기
 홈에서 마이홈페이지로 커스텀위젯 이름 지정하기*/
 
 //---------------------------------------------//
-/*
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -42,11 +42,12 @@ class MyHomePage extends StatelessWidget {
     );
   }
 }
-*/
+
 //---------------------------------------------//
 
 //위랑은 다른 방법을 사용하는법
 //---------------------------------------------//
+/*
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -68,4 +69,5 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+*/
 //---------------------------------------------//
