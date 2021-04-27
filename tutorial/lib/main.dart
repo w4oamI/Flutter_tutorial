@@ -13,7 +13,7 @@ swatch불러와서 블루 음영으로 지정하기
 홈에서 마이홈페이지로 커스텀위젯 이름 지정하기*/
 
 //---------------------------------------------//
-
+/*
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -42,7 +42,7 @@ class MyHomePage extends StatelessWidget {
     );
   }
 }
-
+*/
 //---------------------------------------------//
 
 //위랑은 다른 방법을 사용하는법
@@ -71,3 +71,41 @@ class MyApp extends StatelessWidget {
 }
 */
 //---------------------------------------------//
+//
+//
+//
+//
+//
+//Widget 종류
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Charator',
+      home: Mychar(),
+    );
+  }
+}
+
+class Mychar extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('first App'),
+        centerTitle: true,
+        backgroundColor: Colors.redAccent,
+        elevation: 0.0, //그림자
+      ),
+      body: Center(
+        child: Column(
+          //Widget 세로정렬
+          mainAxisAlignment: MainAxisAlignment.center, //Axis:가로,세로축
+          children: [Text('로그인'), Text('회원가입'), Text('아이디찾기')],
+        ),
+      ),
+    );
+  }
+}
