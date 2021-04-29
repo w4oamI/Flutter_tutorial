@@ -125,6 +125,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false, //왼쪽위 빨간 띠 없애는법
       title: '창경궁',
       home: Grade(),
     );
@@ -135,32 +136,132 @@ class Grade extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.amber[800],
+      backgroundColor: Colors.lightBlue[800],
       appBar: AppBar(
-        title: Text('창경궁'),
-        backgroundColor: Colors.amber[700],
+        title: Text('WareHouse'),
+        backgroundColor: Colors.lightBlue[700],
         centerTitle: true,
         elevation: 0.0,
       ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(30.0, 40.0, 0.0, 0.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start, //가로 정렬
           children: [
-            Text(
-              '로그인',
-              style: TextStyle(color: Colors.white, letterSpacing: 2.0 //글자간격
-                  ),
+            Center(
+              child: CircleAvatar(
+                backgroundImage: AssetImage('assets/giphy.gif'),
+                radius: 60.0,
+                backgroundColor: Colors.lightBlue[800],
+              ),
+            ),
+            Divider(
+              //구분선
+              height: 60.0,
+              color: Colors.white,
+              thickness: 0.5, //선의 두께
+              endIndent: 30.0, //왼쪽에 붙어 있는선 띄우기
+            ),
+            Center(
+              child: Text(
+                '이름',
+                style: TextStyle(color: Colors.white, letterSpacing: 2.0 //글자간격
+                    ),
+              ),
             ),
             SizedBox(
-              height: 10.0, //로그인과 회원가입사이를 벌어줌
+              height: 5.0, //로그인과 회원가입사이를 벌어줌
             ),
-            Text('회원가입',
+            Center(
+              child: Text('홍길동',
+                  style: TextStyle(
+                      color: Colors.white,
+                      letterSpacing: 2.0,
+                      fontSize: 28.0,
+                      fontWeight: FontWeight.bold)),
+            ),
+            SizedBox(
+              height: 20.0,
+            ),
+            Center(
+              child: Text(
+                '닉네임',
+                style: TextStyle(color: Colors.white, letterSpacing: 2.0 //글자간격
+                    ),
+              ),
+            ),
+            SizedBox(
+              height: 5.0, //로그인과 회원가입사이를 벌어줌
+            ),
+            Center(
+              child: Text(
+                '창고지기',
                 style: TextStyle(
                     color: Colors.white,
                     letterSpacing: 2.0,
                     fontSize: 28.0,
-                    fontWeight: FontWeight.bold))
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
+            SizedBox(
+              height: 25.0,
+            ),
+            Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.check_circle_outline),
+                  SizedBox(
+                    width: 10.0,
+                  ),
+                  Text('이용약관 동의',
+                      style:
+                          TextStyle(fontSize: 16.0, letterSpacing: 1.0 //철자 간격
+                              )),
+                ],
+              ),
+            ),
+            Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.check_circle_outline),
+                  SizedBox(
+                    width: 10.0,
+                  ),
+                  Text('이용약관 동의',
+                      style:
+                          TextStyle(fontSize: 16.0, letterSpacing: 1.0 //철자 간격
+                              )),
+                ],
+              ),
+            ),
+            Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.check_circle_outline),
+                  SizedBox(
+                    width: 10.0,
+                  ),
+                  Text(
+                    '이용약관 동의',
+                    style: TextStyle(fontSize: 16.0, letterSpacing: 1.0 //철자 간격
+                        ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 30.0,
+            ),
+            Center(
+              child: CircleAvatar(
+                backgroundImage: AssetImage('assets/contain.png'),
+                radius: 40.0,
+                backgroundColor: Colors.lightBlue[700],
+              ),
+            )
           ],
         ),
       ),
