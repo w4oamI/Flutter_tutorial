@@ -170,7 +170,7 @@ class Grade extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 5.0, //로그인과 회원가입사이를 벌어줌
+              height: 3.0, //로그인과 회원가입사이를 벌어줌
             ),
             Center(
               child: Text('홍길동',
@@ -191,7 +191,7 @@ class Grade extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 5.0, //로그인과 회원가입사이를 벌어줌
+              height: 3.0, //로그인과 회원가입사이를 벌어줌
             ),
             Center(
               child: Text(
@@ -255,13 +255,13 @@ class Grade extends StatelessWidget {
             SizedBox(
               height: 30.0,
             ),
-            Center(
+            /*Center(
               child: CircleAvatar(
                 backgroundImage: AssetImage('assets/contain.png'),
                 radius: 40.0,
                 backgroundColor: Colors.lightBlue[700],
               ),
-            )
+            )*/
           ],
         ),
       ),
