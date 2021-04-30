@@ -137,8 +137,18 @@ class Grade extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.lightBlue[800],
-      appBar: AppBar(
-        title: Text('WareHouse'),
+      // appBar:
+      // title :
+      // 위 처럼 쓰는 이유는 Scaffold가 많은 아규먼트를 가지고 있고, 그중에 하나의 named argument의 형태로 사용
+      //
+      // 그럼  appBar: new AppBar  에서 new가 붙어도 에러가 나지 않는 이유는 ?
+      // Widget앞에 써도 에러가 안나는 이유는 모든 Widget은 클래스를 통해 생성된 인스턴스이다.
+      // AppBar 생성자에 통해 여러개의 argument들을 named argument의 형태로 필요한 만큼 선별적으로 사용하여 만들어진 인스턴스이다.
+      // 일반적으로 위젯은 클래스로 표현이 되고, new라는 키워드로 생성자로 인스턴스를 만들어 사용한다.
+      //----------------------------------------------------------------------//
+      appBar: new AppBar(
+        title: new Text('WareHouse'),
+        //----------------------------------------------------------------------//
         backgroundColor: Colors.lightBlue[700],
         centerTitle: true,
         elevation: 0.0,
@@ -268,3 +278,5 @@ class Grade extends StatelessWidget {
     );
   }
 }
+
+//Flutter 추가 이론적인 내용은 README.md에 추가 하였다.
