@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+//import 'package:flutter/material.dart';
 //함수만드는 순서
 /* 
 material 라이브러리 import
@@ -118,6 +118,7 @@ class Mychar extends StatelessWidget {
 //
 //
 //Page Design
+import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
@@ -280,3 +281,10 @@ class Grade extends StatelessWidget {
 }
 
 //Flutter 추가 이론적인 내용은 README.md에 추가 하였다.
+/*README.md와 동일 내용
+color: Colors.white, 코드에서 .의 의미?
+-> widget이 가지고 있는 여러가지 속성이나 기능 관련 아이템 중에서 하나를 선택하고 싶을때 사용한다.
+
+Center widget이 있다고, 무조건 정중앙으로 가지는 않는다.
+->Center와 Column widget이 사용되어야 한다. 또는 Row Widget
+->세로축 정 중앙에 위치 시키려면 Column위젯 내에 mainAxisAlignment: MainAxisAlignment.center 속성을 사용해야 한다.*/
