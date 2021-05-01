@@ -1,7 +1,14 @@
 # tutorial
 
 A new Flutter project.
+플러터 튜토리얼
 
+color: Colors.white, 코드에서 .의 의미?
+-> widget이 가지고 있는 여러가지 속성이나 기능 관련 아이템 중에서 하나를 선택하고 싶을때 사용한다.
+
+Center widget이 있다고, 무조건 정중앙으로 가지는 않는다.
+->Center와 Column widget이 사용되어야 한다. 또는 Row Widget
+->세로축 정 중앙에 위치 시키려면 Column위젯 내에 mainAxisAlignment: MainAxisAlignment.center 속성을 사용해야 한다.
 ## Getting Started
 
 This project is a starting point for a Flutter application.

@@ -118,6 +118,8 @@ class Mychar extends StatelessWidget {
 //
 //
 //Page Design
+//----------------------------------------------------------------------//
+/*
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -278,7 +280,8 @@ class Grade extends StatelessWidget {
       ),
     );
   }
-}
+}*/
+//----------------------------------------------------------------------//
 
 //Flutter 추가 이론적인 내용은 README.md에 추가 하였다.
 /*README.md와 동일 내용
@@ -288,3 +291,56 @@ color: Colors.white, 코드에서 .의 의미?
 Center widget이 있다고, 무조건 정중앙으로 가지는 않는다.
 ->Center와 Column widget이 사용되어야 한다. 또는 Row Widget
 ->세로축 정 중앙에 위치 시키려면 Column위젯 내에 mainAxisAlignment: MainAxisAlignment.center 속성을 사용해야 한다.*/
+
+//App Bar메뉴
+//----------------------------------------------------------------------//
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'AppBar',
+      theme: ThemeData(primarySwatch: Colors.red),
+      home: MyPage(),
+    );
+  }
+}
+
+class MyPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Appbar menu'),
+        centerTitle: true,
+        elevation: 0.0,
+        leading: IconButton(
+          //간단한 위젯이나 아이콘을 앱바타이틀 왼쪽에 위치시키는 기능을 한다.\
+          icon: Icon(Icons.menu),
+          onPressed: () {
+            print('menu button click');
+          },
+        ),
+        actions: [
+          IconButton(
+            //간단한 위젯이나 아이콘을 앱바타이틀 왼쪽에 위치시키는 기능을 한다.\
+            icon: Icon(Icons.shopping_cart),
+            onPressed: () {
+              print('shopping button click');
+            },
+          ),
+          IconButton(
+            //간단한 위젯이나 아이콘을 앱바타이틀 왼쪽에 위치시키는 기능을 한다.\
+            icon: Icon(Icons.search),
+            onPressed: () {
+              print('search button click');
+            },
+          ),
+        ],
+      ),
+    );
+  }
+}
