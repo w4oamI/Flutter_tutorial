@@ -317,29 +317,58 @@ class MyPage extends StatelessWidget {
         title: Text('Appbar menu'),
         centerTitle: true,
         elevation: 0.0,
-        leading: IconButton(
-          //간단한 위젯이나 아이콘을 앱바타이틀 왼쪽에 위치시키는 기능을 한다.\
+
+        //왼쪽위 햄버거 모양 아이콘
+        //--------------------------------------------------------------------//
+        /*leading: IconButton(
+          //leading: 간단한 위젯이나 아이콘을 앱바타이틀 왼쪽에 배치 할때 쓰인다.
           icon: Icon(Icons.menu),
           onPressed: () {
             print('menu button click');
           },
-        ),
+        ),*/
+        //--------------------------------------------------------------------//
+
         actions: [
+          //actions: 복수의 아이콘 버튼을 오른쪽에 배치할때 사용한다.
           IconButton(
-            //간단한 위젯이나 아이콘을 앱바타이틀 왼쪽에 위치시키는 기능을 한다.\
             icon: Icon(Icons.shopping_cart),
             onPressed: () {
+              //onPressed: 함수의 형태로 일반 버튼이나 아이콘 버트을 터치했을 때 일어나는 이벤트
               print('shopping button click');
             },
           ),
           IconButton(
-            //간단한 위젯이나 아이콘을 앱바타이틀 왼쪽에 위치시키는 기능을 한다.\
             icon: Icon(Icons.search),
             onPressed: () {
               print('search button click');
             },
           ),
         ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            UserAccountsDrawerHeader(
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: AssetImage('assets/giphy.gif'),
+                backgroundColor: Colors.white,
+              ),
+              accountName: Text('창경궁'),
+              accountEmail: Text('chang@chang.com'),
+              onDetailsPressed: () {
+                print('arrow is clicked');
+              },
+              decoration: BoxDecoration(
+                  //UserAccountsDrawerHeader 모서리 둥글게
+                  color: Colors.red[200],
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(30.0),
+                      bottomRight: Radius.circular(30.0))),
+            )
+          ],
+        ),
       ),
     );
   }
