@@ -352,9 +352,21 @@ class MyPage extends StatelessWidget {
           children: [
             UserAccountsDrawerHeader(
               currentAccountPicture: CircleAvatar(
+                //하나만 가능
                 backgroundImage: AssetImage('assets/giphy.gif'),
                 backgroundColor: Colors.white,
               ),
+              otherAccountsPictures: [
+                //복수개 가능
+                CircleAvatar(
+                  backgroundImage: AssetImage('assets/giphy.gif'),
+                  backgroundColor: Colors.white,
+                ),
+                //CircleAvatar(
+                //backgroundImage: AssetImage('assets/giphy.gif'),
+                //  backgroundColor: Colors.white,
+                //)
+              ],
               accountName: Text('창경궁'),
               accountEmail: Text('chang@chang.com'),
               onDetailsPressed: () {
@@ -366,7 +378,46 @@ class MyPage extends StatelessWidget {
                   borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(30.0),
                       bottomRight: Radius.circular(30.0))),
-            )
+            ),
+            ListTile(
+              leading: Icon(
+                //왼쪽에 아이콘 넣기)
+                Icons.home,
+                color: Colors.grey[850],
+              ),
+              title: Text('home'),
+              onTap: () {
+                print('home is clicked');
+              },
+              trailing: Icon(Icons.add //오른쪽에 아이콘 넣기
+                  ),
+            ),
+            ListTile(
+              leading: Icon(
+                //왼쪽에 아이콘 넣기)
+                Icons.settings,
+                color: Colors.grey[850],
+              ),
+              title: Text('setting'),
+              onTap: () {
+                print('home is clicked');
+              },
+              trailing: Icon(Icons.add //오른쪽에 아이콘 넣기
+                  ),
+            ),
+            ListTile(
+              leading: Icon(
+                //왼쪽에 아이콘 넣기)
+                Icons.question_answer,
+                color: Colors.grey[850],
+              ),
+              title: Text('Q&A'),
+              onTap: () {
+                print('home is clicked');
+              },
+              trailing: Icon(Icons.add //오른쪽에 아이콘 넣기
+                  ),
+            ),
           ],
         ),
       ),
