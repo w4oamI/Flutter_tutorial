@@ -304,15 +304,22 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'AppBar',
       theme: ThemeData(primarySwatch: Colors.red),
-      home: MyPage(),
+      home: MyPage(), //커스텀위젯 생성
     );
   }
 }
 
+/* 
+Widget build(BuildContext context)
+return Scaffold
+빌드 함수는 Scaffold를 리턴하는데 이때 위젯 트리 상에서 어디에 
+위치하는가에 대한 정보를 가지고 있는 context를 넣어 리턴 한다*/
 class MyPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    //build메소드는 Widget타입이다. 인자값은 BuildContext타입의 context인자 값이다.
     return Scaffold(
+      //즉, build함수는 context인자 값을 대입한 scaffold를 return 한다.
       appBar: AppBar(
         title: Text('Appbar menu'),
         centerTitle: true,
