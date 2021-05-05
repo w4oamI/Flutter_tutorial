@@ -294,7 +294,7 @@ Center widget이 있다고, 무조건 정중앙으로 가지는 않는다.
 
 //App Bar메뉴
 //----------------------------------------------------------------------//
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
@@ -431,3 +431,53 @@ class MyPage extends StatelessWidget {
     );
   }
 }
+*/
+
+//[fn+control+f11]은 코드 정리 단축키  (키 등록 해놓음)
+//--------------------------------------------------------------------//
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'snack Bar',
+      theme: ThemeData(primarySwatch: Colors.red),
+      home: MyPage(),
+    );
+  }
+}
+
+class MyPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('Snack Bar'),
+          centerTitle: true,
+        ),
+        body: Builder(
+          builder: (BuildContext ctx) {
+            //MyPage의 context와 비교하기 위해 ctx로 바꾼다.
+            return Center(
+              child: FlatButton(
+                child: Text(
+                  'Show me',
+                  style: TextStyle(color: Colors.white),
+                ),
+                color: Colors.red,
+                onPressed: () {
+                  Scaffold.of(ctx).showSnackBar(SnackBar(
+                    //Scaffold.of(context)은 빌더의 ctx를 받아야함
+                    content: Text('Good'),
+                  ));
+                },
+              ),
+            ); //center위젯은 이제 리턴된 위젯이기 때문에 ;로 바꾼다.
+          },
+        ));
+  }
+}
+//--------------------------------------------------------------------//
