@@ -434,7 +434,9 @@ class MyPage extends StatelessWidget {
 */
 
 //[fn+control+f11]은 코드 정리 단축키  (키 등록 해놓음)
+//Builder Widget을 이용하여 스낵바 생성
 //--------------------------------------------------------------------//
+/*
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -480,4 +482,55 @@ class MyPage extends StatelessWidget {
         ));
   }
 }
+*/
 //--------------------------------------------------------------------//
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Snack Bar',
+      color: Colors.red,
+      home: MyPage(),
+    );
+  }
+}
+
+class MyPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Snack Bar'),
+        centerTitle: true,
+      ),
+      body: MySnackBar(),
+    );
+  }
+}
+
+class MySnackBar extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: RaisedButton(
+          child: Text('Show Me'),
+          onPressed: () {
+            Scaffold.of(context).showSnackBar(
+              SnackBar(
+                content: Text(
+                  'Hello',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: Colors.white),
+                ),
+                backgroundColor: Colors.teal,
+                duration: Duration(milliseconds: 1000),
+              ),
+            );
+          }),
+    );
+  }
+}
