@@ -483,7 +483,10 @@ class MyPage extends StatelessWidget {
   }
 }
 */
+
+//Builder widget 없이 Snack bar 만들기
 //--------------------------------------------------------------------//
+/*
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -533,4 +536,59 @@ class MySnackBar extends StatelessWidget {
           }),
     );
   }
+}
+*/
+//--------------------------------------------------------------------//
+
+//--------------------------------------------------------------------//
+import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'toast',
+      color: Colors.red,
+      home: MyHome(),
+    );
+  }
+}
+
+class MyHome extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Toast'),
+        centerTitle: true,
+      ),
+      body: Center(
+        child: FlatButton(
+          onPressed: () {
+            flutterToast();
+          },
+          child: Text('Toast'),
+          color: Colors.blue,
+        ),
+      ),
+    );
+  }
+}
+
+//토스트 메세지는 스낵바와는 다르게 pubspec.yaml 파일에서 추가해야한다.
+//cupertino_icons 밑에  [fluttertoast: ^3.1.3]를 추가한다.
+//그후 토스르를 import 한다.
+
+void flutterToast() {
+  Fluttertoast.showToast(
+      msg: 'Toast얘제',
+      //커스터마이징
+      gravity: ToastGravity.BOTTOM,
+      backgroundColor: Colors.redAccent,
+      fontSize: 30.0,
+      textColor: Colors.white,
+      toastLength: Toast.LENGTH_SHORT);
 }
