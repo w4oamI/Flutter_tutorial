@@ -588,9 +588,15 @@ void flutterToast() {
       //커스터마이징
       gravity: ToastGravity.BOTTOM,
       backgroundColor: Colors.redAccent,
-      fontSize: 30.0,
-      textColor: Colors.white,
+      fontSize: 15.0,
+      textColor: Colors.black,
       toastLength: Toast.LENGTH_SHORT);
 }
 
 //코드 확인 21.05.28
+//CS정리(sesstion and cookie)
+//CS정리(클러스터 and 논클러스터)
+//
+//--------------------------//
+
+//--------------------------//
