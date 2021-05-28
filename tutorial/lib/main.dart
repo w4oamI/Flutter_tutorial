@@ -592,3 +592,5 @@ void flutterToast() {
       textColor: Colors.white,
       toastLength: Toast.LENGTH_SHORT);
 }
+
+//코드 확인 21.05.28
