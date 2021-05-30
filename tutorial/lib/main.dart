@@ -593,10 +593,53 @@ void flutterToast() {
       toastLength: Toast.LENGTH_SHORT);
 }
 
+//--------------------------//
 //코드 확인 21.05.28
 //CS정리(sesstion and cookie)
 //CS정리(클러스터 and 논클러스터)
-//
+//CS정리(MVC패턴)
 //--------------------------//
 
-//--------------------------//
+//Container Widget
+//---------------------------------------//
+//children이 없을 경우 컨테이너 위젯은 할수 있는 최대한의 공간을 차지한다.
+//아래는 설명을 위한 코드므로 개별 실행 불가능
+class MyHome extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: Container(
+        color: Colors.white,
+      ),
+    );
+  }
+}
+
+//위 코드에서 Scaffold의 배경을 검은색으로 해놓았을때, 앱의 배경이 검은색이 된다.
+//하지만 컨테이너를 만들고, 컨테이너의 배경을 하얀색으로 해놓았을때, child가 없기 때문에
+//결과로는 검은색이 존재하지 않는 하얀색이 나오게 된다.
+//그렇다면 child을 사용하게 되면 어떻게 되는지 아래 코드를 보겠다.
+class MyHome extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: Container(
+        color: Colors.white,
+        child: Text('컨테이너 예제'),
+      ),
+    );
+  }
+}
+//위와 같이 child: Text('컨테이너 예제'), 한줄을 추가 하게 되면
+//텍스트의 크기만큼 컨테이너의 배경인 하얀색이 잡힌다. 그 이외의 공간은
+//Scaffold에서 지정한 검은색이 나온다.
+//즉, 모든 화면이 검정색인데, 왼쪽위에 [컨테이너 예제] 텍스트 크기만 하얀색으로 나온다.
+
+/* Container는 children을 가지게 되면 children의 크기로 줄어든다. */
+//---------------------------------------//
+
+//---------------//
+//CS정리(HTTP와 HTTPS)
+//---------------//
