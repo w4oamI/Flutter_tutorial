@@ -643,3 +643,33 @@ class MyHome extends StatelessWidget {
 //---------------//
 //CS정리(HTTP와 HTTPS)
 //---------------//
+
+//바로 위코드를 사용하게 되면 시계 및 알람이 뜨는 쪽에 [컨테이너 예제]가 뜬다.
+//SafeArea를 이용하여 보여주기 위한 컨텐츠가 화면 밖으로 나가지 않게 경계를 만들어야 한다.
+//컨테이너위젯에서 wrap with widget을 선택하고
+//widget을 SafeArea로 바꿔 준다.
+//---------------------------------------//
+class MyHome extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: SafeArea(
+        child: Container(
+          color: Colors.white,
+          width: 100, //컨테이너 가로를 100
+          height: 100, //컨테이너 세로를 100
+          //모든 margin을 같게
+          //margin: EdgeInsets.all(20), //화면에서 20 만큼 띈운다. -> 현재 왼쪽과 위쪽이 20만큼 떨어져 있다.
+          //margin각각 지정을 하기위해서
+          margin: EdgeInsets.symmetric(
+            vertical: 80, //세로
+            horizontal: 20, //가로
+          ),
+          child: Text('컨테이너 예제'),
+        ),
+      ),
+    );
+  }
+}
+//---------------------------------------//
